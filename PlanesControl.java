@@ -10,6 +10,7 @@ public class PlanesControl {
 	
 	Plane temp; 
 	static Drone d;
+	public boolean hitted = false;
 	public PlanesControl(Drone d)
 	{
 		
