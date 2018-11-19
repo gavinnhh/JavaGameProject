@@ -85,7 +85,7 @@ public class Game extends JPanel implements ActionListener{
 		g.drawString("Your score:", 520, 10);
 		g.drawString("Round:"+round, 10, 10);
 		
-		if(hi == 0) // for testing purpose, if drone hits x = 300, game over
+		if(p.hitted) // for testing purpose, if drone hits x = 300, game over
 		{	
 			runGame.stop();
 			g.setColor(Color.red);
