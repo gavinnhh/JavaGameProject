@@ -38,6 +38,16 @@ public class PlanesControl {
 	
 	public void update()
 	{
+		for(int i = 0; i < e.size(); i++) // check for collision
+		{	
+			if(e.get(i).hit)  
+			{
+				hitted = true;
+			//System.out.println("hit???");
+			}
+			//System.out.println("no hit");
+		}
+		
 		for(int i = 0; i < e.size(); i++)
 		{
 			temp = e.get(i);
