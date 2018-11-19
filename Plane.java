@@ -38,13 +38,8 @@ public class Plane extends Position{
 
 public void checkCollision(Rectangle plane, Rectangle drone){
 		
-		if(drone.intersects(plane)){
-			//System.out.println("hit");
+		if(drone.intersects(plane))		
 			hit = true;
-			//System.out.println("hi");
-			//System.exit(0);
-		}
-		hit = false;
 	}
 
 	
