@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
 public class Drone extends Position{
 	
 	private String playerImage = "/images/Picture2.png"; // the images folder can not be in planeProject, but parallel with it under src
-	int velocityX = 0;
+	int velocityX = 1;
 	int velocityY = 0;
 	//private Bullet b;
 	
@@ -43,36 +43,41 @@ public class Drone extends Position{
 		
 		if(key == KeyEvent.VK_UP)
 		{
-			velocityY = -4;
+			velocityY = -1;
 			velocityX = 0;
 			
 		}else if(key == KeyEvent.VK_DOWN) {
-			velocityY = 4;
+			velocityY = 1;
 			velocityX = 0;
 		}else if(key == KeyEvent.VK_RIGHT) {
-			velocityX = 4;
+			velocityX = 2;
 			velocityY = 0;
 		}else if(key == KeyEvent.VK_LEFT) {
-			velocityX = -4;
+			velocityX = -1;
 			velocityY = 0;
 			
 		}
 	}
 	public void keyReleased(KeyEvent e)
 	{
-		/*int key = e.getKeyCode();
+		int key = e.getKeyCode();
 
 		if(key == KeyEvent.VK_UP)
 		{
+			velocityX = 1;
 			velocityY = 0;
 		}else if(key == KeyEvent.VK_DOWN) {
+			velocityX = 1;
 			velocityY = 0;
 		}else if(key == KeyEvent.VK_RIGHT) {
-			velocityX = 0;
+			velocityX = 1;
+			velocityY = 0;
 		}else if(key == KeyEvent.VK_LEFT) {
-			velocityX = 0;
-		}*/
+			velocityX = 1;
+			velocityY = 0;
+		}
 	}
+	
 	
 	public void draw(Graphics2D g2d) {
 		g2d.drawImage(getPlayerImage(), x, y, null);
