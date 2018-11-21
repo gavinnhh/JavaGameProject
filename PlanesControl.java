@@ -44,6 +44,7 @@ public class PlanesControl {
 			if(e.get(i).hit)  
 			{
 				hitted = true;
+				e.remove(i);
 			//System.out.println("hit???");
 			}
 			//System.out.println("no hit");
