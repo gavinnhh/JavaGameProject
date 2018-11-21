@@ -30,6 +30,7 @@ public class Game extends JPanel implements ActionListener{
 	int hi=5;
 	int score = 0;
 	int round = 1;
+	int lives = 3;
 	
 	public Game() {
 		
@@ -77,21 +78,39 @@ public class Game extends JPanel implements ActionListener{
 		d.draw(g2d); // draw the player . this function draw is inside Player
 		//e.draw(g2d);
 		p.draw(g2d);
+		p.drawB(g2d);
 		//System.out.println("Create bullet???");		
 		//b.draw(g2d);
 		
-		g.drawString(""+hi, 280, 10);
-		g.drawString(""+score, 600, 10);
+		g.drawString(""+ hi, 280, 10);
+		g.drawString(""+ score, 600, 10);
 		g.drawString("Your score:", 520, 10);
 		g.drawString("Round:"+round, 10, 10);
+				
+		g.drawString(""+lives, 400, 10);
+		g.drawString("Lives:", 360, 10);
+		//g.drawString("Round:"+round, 10, 10);
 		
-		if(p.hitted) // for testing purpose, if drone hits x = 300, game over
+		if(p.hitted ) // check collision
 		{	
-			runGame.stop();
-			g.setColor(Color.red);
-			g.setFont(new Font("serif", Font.BOLD, 40));
-			g.drawString("CRASHED! GAME OVER", 100,  240);
+			//runGame.stop();
 			
+			if(lives == 0)
+			{			
+				runGame.stop();
+				g.setColor(Color.red);
+				g.setFont(new Font("serif", Font.BOLD, 40));
+				g.drawString("OOPS! GAME OVER", 120,  240);
+			}
+			try {
+	            Thread.sleep(1000);
+	        } catch (InterruptedException e) {
+	            //e.printStackTrace();
+	        }
+			//System.out.println("Hited!!!!!");
+			
+			p.reverseHit();
+			lives--;
 		}
 		
 	}
