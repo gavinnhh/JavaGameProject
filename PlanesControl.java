@@ -37,6 +37,11 @@ public class PlanesControl {
 		}
 	}
 	
+	public void reverseHit()
+	{
+		hitted = false;
+	}
+	
 	public void update()
 	{
 		for(int i = 0; i < e.size(); i++) // check for collision
