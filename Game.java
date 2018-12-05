@@ -87,7 +87,7 @@ public class Game extends JPanel implements ActionListener{
 		g.drawString("Your score:", 520, 10);
 		g.drawString("Round:"+round, 10, 10);
 				
-		g.drawString(""+lives, 400, 10);
+		//g.drawString(""+lives, 400, 10);
 		g.drawString("Lives:", 360, 10);
 		//g.drawString("Round:"+round, 10, 10);
 		
@@ -112,6 +112,10 @@ public class Game extends JPanel implements ActionListener{
 			p.reverseHit();
 			lives--;
 		}
+		
+		g.setColor(Color.red);
+		g.setFont(new Font("serif", Font.BOLD, 14));
+		g.drawString(""+lives, 400, 10);
 		
 	}
 
